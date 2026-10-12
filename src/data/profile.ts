@@ -46,6 +46,12 @@ export type Honor = {
 
 export const honors: Honor[] = [
   {
+    title: "Silver Award (2nd Place)",
+    org: "NBA × AWS BroadcastCode Hackathon, Zhuhai–Macau",
+    year: "2026",
+    kind: "honor",
+  },
+  {
     title: "National Scholarship",
     org: "Ministry of Education of the People's Republic of China",
     year: "2026",

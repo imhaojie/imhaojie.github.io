@@ -41,7 +41,7 @@ export const publicationGroups: PublicationGroup[] = [
           },
           {
             label: "Code",
-            href: "https://github.com/Jackey0903/To-Think-or-Not-to-Think",
+            href: "https://github.com/imhaojie/To-Think-or-Not-to-Think",
           },
         ],
         image: {
@@ -70,8 +70,8 @@ export const publicationGroups: PublicationGroup[] = [
         href: "https://arxiv.org/abs/2608.02218",
         links: [
           { label: "Paper", href: "https://arxiv.org/abs/2608.02218" },
-          { label: "Code", href: "https://github.com/Jackey0903/PosterMELD" },
-          { label: "Project", href: "https://jackey0903.github.io/PosterMELD/" },
+          { label: "Code", href: "https://github.com/imhaojie/PosterMELD" },
+          { label: "Project", href: "https://imhaojie.github.io/PosterMELD/" },
         ],
         image: {
           src: "/assets/postermeld-teaser.png",
@@ -88,9 +88,9 @@ export const publicationGroups: PublicationGroup[] = [
         title:
           "Listening to the Motion: Audio-Conditioned Kinematic Verification for Robust Audio-Visual Segmentation",
         venue: "Under review - code released",
-        href: "https://github.com/Jackey0903/SKA-VCT",
+        href: "https://github.com/imhaojie/SKA-VCT",
         links: [
-          { label: "Code", href: "https://github.com/Jackey0903/SKA-VCT" },
+          { label: "Code", href: "https://github.com/imhaojie/SKA-VCT" },
         ],
         image: {
           src: "/assets/keva-framework.jpg",

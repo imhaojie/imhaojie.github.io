@@ -6,7 +6,7 @@ export const site = {
   bio: "Incoming Ph.D. student at Shanghai Jiao Tong University, jointly trained at Shanghai Innovation Institute, focusing on multimodal large language models, video understanding and generation, and world models.",
   description:
     "Haojie Hu is an incoming Ph.D. student at Shanghai Jiao Tong University, jointly trained at Shanghai Innovation Institute, working on multimodal large language models, video understanding and generation, and world models.",
-  url: "https://jackey0903.github.io",
+  url: "https://imhaojie.github.io",
   portrait: "/assets/avatar.jpg",
   affiliations: [
     { name: "Tongji University", url: "https://www.tongji.edu.cn/" },
@@ -14,10 +14,10 @@ export const site = {
     { name: "Shanghai Innovation Institute", url: "https://www.sii.edu.cn/" },
   ],
   links: {
-    github: "https://github.com/Jackey0903",
-    githubHandle: "Jackey0903",
-    profileRepo: "https://github.com/Jackey0903/Jackey0903",
-    siteRepo: "https://github.com/Jackey0903/Jackey0903.github.io",
+    github: "https://github.com/imhaojie",
+    githubHandle: "imhaojie",
+    profileRepo: "https://github.com/imhaojie/imhaojie",
+    siteRepo: "https://github.com/imhaojie/imhaojie.github.io",
     email: "mailto:3038115521@qq.com",
     emailLabel: "3038115521@qq.com",
   },

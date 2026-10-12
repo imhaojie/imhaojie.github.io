@@ -18,6 +18,27 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "GameBuddy: AI Basketball Companion",
+    subtitle: "Evidence-backed basketball stories from video and game data",
+    role: "NBA × AWS BroadcastCode 2026 Hackathon, Zhuhai–Macau",
+    period: "2026",
+    status: "Silver Award (2nd place)",
+    summary:
+      "Turns basketball video and official game data into evidence-backed play breakdowns with AI commentary and an enhanced replay.",
+    tags: ["Multimodal AI", "AWS", "Video"],
+    highlights: [
+      "Connects official events, game statistics, and video frames in a traceable evidence record.",
+      "Uses AI agents to turn a play into a verified narrative and an enhanced video.",
+      "Built with a basketball companion interface for replay and exploration.",
+    ],
+    repo: "https://github.com/imhaojie/BroadcastCode-2026",
+    image: {
+      src: "/assets/gamebuddy-demo.jpg",
+      thumb: "/assets/thumbs/gamebuddy-demo.jpg",
+      alt: "GameBuddy basketball companion demo video opening frame",
+    },
+  },
+  {
     title: "DraftCode: NBA Draft War Room",
     subtitle: "Three-signal NBA draft prediction with auditable agents",
     role: "AWS Summit Shanghai Hackathon",
@@ -31,7 +52,7 @@ export const projects: Project[] = [
       "Separates expensive LLM judgment from deterministic sampling through an LLM-once architecture.",
       "Maps the workflow to S3, Lambda, Step Functions, DynamoDB, and an evidence ledger for auditability.",
     ],
-    repo: "https://github.com/Jackey0903/draftcode",
+    repo: "https://github.com/imhaojie/draftcode",
     image: {
       src: "/assets/draftcode-architecture.png",
       thumb: "/assets/thumbs/draftcode-architecture.jpg",
@@ -52,7 +73,7 @@ export const projects: Project[] = [
       "Bridges the web runtime to physical keys and LED feedback on an ESP32-S3.",
       "Built to keep the latency budget small enough to feel like an instrument.",
     ],
-    repo: "https://github.com/Jackey0903/VoxSprite",
+    repo: "https://github.com/imhaojie/VoxSprite",
     image: {
       src: "/assets/voxsprite-app.png",
       thumb: "/assets/thumbs/voxsprite-app.jpg",
@@ -73,7 +94,7 @@ export const projects: Project[] = [
       "Built with a small team and documented development logs across the semester.",
       "A good reminder that engineering can stay playful.",
     ],
-    repo: "https://github.com/Jackey0903/Stardew-Valley",
+    repo: "https://github.com/imhaojie/Stardew-Valley",
     image: {
       src: "/assets/stardew-title.png",
       thumb: "/assets/thumbs/stardew-title.jpg",
