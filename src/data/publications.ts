@@ -70,7 +70,7 @@ export const publicationGroups: PublicationGroup[] = [
         href: "https://arxiv.org/abs/2608.02218",
         links: [
           { label: "Paper", href: "https://arxiv.org/abs/2608.02218" },
-          { label: "Code", href: "https://github.com/imhaojie/PosterMELD" },
+          { label: "Code", href: "https://github.com/Shannon4Science/PosterMELD" },
           { label: "Project", href: "https://imhaojie.github.io/PosterMELD/" },
         ],
         image: {
