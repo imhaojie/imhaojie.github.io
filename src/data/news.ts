@@ -9,6 +9,13 @@ export type NewsItem = {
 export const news: NewsItem[] = [
   {
     date: "10/2026",
+    highlight: "To Think or Not to Think",
+    body:
+      "is now available on arXiv as arXiv:2610.21613.",
+    href: "https://arxiv.org/abs/2610.21613",
+  },
+  {
+    date: "10/2026",
     highlight: "GameBuddy",
     body:
       "won the Silver Award (2nd place) at the NBA × AWS BroadcastCode 2026 Hackathon in Zhuhai–Macau.",
