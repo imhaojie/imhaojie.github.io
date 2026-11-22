@@ -1,118 +1,87 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Hero from "@components/Hero.astro";
 import Entry from "@components/Entry.astro";
-import Icon from "@components/Icon.astro";
-import { site } from "@data/site";
-import { education, honors, interests } from "@data/profile";
+import { education, honors } from "@data/profile";
+import { experience } from "@data/experience";
 import { news } from "@data/news";
-import { publicationGroups, publicationLegend } from "@data/publications";
+import { publicationGroups } from "@data/publications";
 import { projects } from "@data/projects";
-
-const [tongji, sjtu, sii] = site.affiliations;
-const interestList =
-  interests.slice(0, -1).join(", ") + ", and " + interests[interests.length - 1];
 ---
 
 <BaseLayout>
-  <h1 class="page__title" id="about">&#128173; About me</h1>
-  <div class="prose">
-    <p>
-      I am an undergraduate student in Software Engineering at{" "}
-      <a href={tongji.url}>{tongji.name}</a> and an incoming Ph.D. student at{" "}
-      <a href={sjtu.url}>{sjtu.name}</a>, jointly trained at{" "}
-      <a href={sii.url}>{sii.name}</a>. My research interests include{" "}
-      {interestList}.
-    </p>
-  </div>
+  <Hero />
 
-  <h2 class="section__title" id="education">&#128214; Education</h2>
-  <div class="prose">
-    <ul>
-      {
-        education.map((entry) => (
-          <li>
-            {entry.period}: {entry.degree},{" "}
-            {entry.institutionUrl ? (
-              <a href={entry.institutionUrl}>{entry.institution}</a>
-            ) : (
-              entry.institution
-            )}.
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-
-  <h2 class="section__title" id="news">&#128293; News</h2>
-  <div class="prose">
-    <ul>
-      {
-        news.map((item) => (
-          <li>
-            [{item.date}]{" "}
-            {item.href ? (
-              <a class="news-highlight" href={item.href}>{item.highlight}</a>
-            ) : (
-              <span class="news-highlight">{item.highlight}</span>
-            )}{" "}
-            {item.body}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-
-  <h2 class="section__title" id="publications">
-    <span>&#128221; Publications</span>
-    <span class="publication-legend">{publicationLegend}</span>
-  </h2>
-  {
-    publicationGroups.map((group) => (
-      <>
-        <h3 class="group__title">{group.heading}</h3>
-        {group.entries.map((entry) => (
-          <Entry
-            title={entry.title}
-            href={entry.href}
-            authors={entry.authors}
-            venue={entry.venue}
-            links={entry.links}
-            image={entry.image}
-          />
+  <div class="wrap">
+    <section class="section split" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Research<br class="wide-only" /> experience</h2>
+      <div class="positions">
+        {experience.map((job) => (
+          <article class="position">
+            <div class="position__head">
+              <h3>{job.institution}</h3>
+              <span class="date">{job.period}</span>
+            </div>
+            <p class="position__team">{job.team}</p>
+            <p class="position__role">{job.role}</p>
+            <p>{job.description}</p>
+          </article>
         ))}
-      </>
-    ))
-  }
+      </div>
+    </section>
 
-  <h2 class="section__title" id="projects">&#128640; Projects</h2>
-  {
-    projects.map((project) => (
-      <Entry
-        title={project.title}
-        href={project.repo}
-        venue={`${project.period} · ${project.role} · ${project.status}`}
-        summary={project.summary}
-        links={[{ label: "Code", href: project.repo }, ...(project.links ?? [])]}
-        image={project.image}
-      />
-    ))
-  }
+    <section class="section" id="publications" aria-labelledby="research-title">
+      <h2 id="research-title">Publications &amp; preprints</h2>
+      <div class="papers">
+        {publicationGroups.flatMap((group) => group.entries).map((paper) => <Entry {...paper} />)}
+      </div>
+    </section>
 
-  <h2 class="section__title" id="honors">&#127894; Honors and Awards</h2>
-  <ul class="award-list">
-    {
-      honors.map((honor) => (
-        <li class="award">
-          <span class={`award__badge award__badge--${honor.kind}`}>
-            <Icon name={honor.kind === "scholarship" ? "medal" : "star"} />
-          </span>
-          <span class="award__body">
-            <span class="award__title">{honor.title}</span>
-            {honor.org && <span class="award__org">{honor.org}</span>}
-          </span>
-          {honor.year && <span class="award__year">{honor.year}</span>}
-        </li>
-      ))
-    }
-  </ul>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Selected projects</h2>
+      <div class="projects">
+        {projects.map((project) => (
+          <article class="project">
+            {project.image && <a class="project__media" href={project.image.src} aria-label={`View full-size image for ${project.title}`}>
+              <img src={project.image.thumb ?? project.image.src} alt={project.image.alt} width="528" height="290" loading="lazy" />
+            </a>}
+            <p class="kicker">{project.period} · {project.role} · {project.status}</p>
+            <h3><a href={project.repo}>{project.title}</a></h3>
+            <p>{project.summary}</p>
+            <div class="text-links"><a href={project.repo}>Source code<span class="sr-only"> for {project.title}</span></a>
+              {project.links?.map((link) => <a href={link.href}>{link.label}</a>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <div class="education-list">
+        {education.map((entry) => <article class="edu">
+          <p class="date">{entry.period}</p>
+          <h3><a href={entry.institutionUrl}>{entry.institution}</a></h3>
+          <p class="position__role">{entry.degree}</p><p>{entry.detail}</p>
+        </article>)}
+      </div>
+    </section>
+
+    <section class="section split" id="honors" aria-labelledby="honors-title">
+      <h2 id="honors-title">Honors &amp;<br class="wide-only" /> awards</h2>
+      <ul class="honors">
+        {honors.map((honor) => <li><div><strong>{honor.title}</strong><span>{honor.org}</span></div><span class="date">{honor.year}</span></li>)}
+      </ul>
+    </section>
+
+    <section class="section split" id="news" aria-labelledby="news-title">
+      <h2 id="news-title">News</h2>
+      <div class="news">
+        {news.slice(0, 2).map((item) => <p><span class="date">{item.date}</span><span><a href={item.href}>{item.highlight}</a> {item.body}</span></p>)}
+        <details><summary>Earlier news</summary>
+          {news.slice(2).map((item) => <p><span class="date">{item.date}</span><span><a href={item.href}>{item.highlight}</a> {item.body}</span></p>)}
+        </details>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

@@ -1,6 +1,5 @@
 ---
 import Masthead from "@components/Masthead.astro";
-import Sidebar from "@components/Sidebar.astro";
 import { site } from "@data/site";
 import "@styles/global.css";
 
@@ -26,7 +25,7 @@ const canonical = new URL(Astro.url.pathname, site.url);
     <meta name="author" content={site.name} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/jpeg" href={site.portrait} />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#102e32" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={pageTitle} />
@@ -47,12 +46,15 @@ const canonical = new URL(Astro.url.pathname, site.url);
     })} />
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <Masthead />
-    <div class="site-layout">
-      <Sidebar />
-      <main class="page" id="main">
-        <slot />
-      </main>
-    </div>
+    <main id="main"><slot /></main>
+    <footer>
+      <div class="wrap footer__inner">
+        <a class="brand" href="#about"><span class="monogram" aria-hidden="true">hh</span>{site.name}</a>
+        <a href={site.links.email}>{site.links.emailLabel}</a>
+        <a href={site.links.github} rel="me">GitHub</a>
+      </div>
+    </footer>
   </body>
 </html>

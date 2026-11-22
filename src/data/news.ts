@@ -1,6 +1,5 @@
 export type NewsItem = {
   date: string;
-  /** Rendered before the body text in the template's red highlight style. */
   highlight?: string;
   body: string;
   href?: string;
@@ -19,7 +18,7 @@ export const news: NewsItem[] = [
     highlight: "GameBuddy",
     body:
       "won the Silver Award (2nd place) at the NBA × AWS BroadcastCode 2026 Hackathon in Zhuhai–Macau.",
-    href: "https://github.com/imhaojie/BroadcastCode-2026",
+    href: "https://github.com/imhaojie/GameBuddy",
   },
   {
     date: "09/2026",

@@ -1,62 +1,20 @@
 ---
-import type { EntryLink } from "@data/publications";
+import type { Publication } from "@data/publications";
 import { site } from "@data/site";
-
-type Props = {
-  title: string;
-  href?: string;
-  authors?: string[];
-  venue?: string;
-  summary?: string;
-  links?: EntryLink[];
-  image?: { src: string; alt: string; thumb?: string };
-  placeholder?: string;
-};
-
-const { title, href, authors, venue, summary, links, image, placeholder } =
-  Astro.props;
-
-const fallback = placeholder ?? title.split(":")[0];
+type Props = Publication;
+const { title, href, authors, venue, summary, links, image } = Astro.props;
 ---
-
-<article class="entry">
-  <div class="entry__media">
-    {
-      image ? (
-        <a href={image.src} aria-label={`Preview: ${title}`}>
-          <img class="entry__thumb" src={image.thumb ?? image.src} alt={image.alt} loading="lazy" width="176" height="108" />
-        </a>
-      ) : (
-        <div class="entry__placeholder" aria-hidden="true">{fallback}</div>
-      )
-    }
-  </div>
-  <div class="entry__body">
-    <p class="entry__title">
-      {href ? <a href={href}>{title}</a> : title}
-    </p>
-    {
-      authors && authors.length > 0 && (
-        <p class="entry__authors">
-          {authors.map((author, index) => (
-            <>
-              {index > 0 && ", "}
-              {author === site.name ? <strong>{author}</strong> : author}
-            </>
-          ))}
-        </p>
-      )
-    }
-    {venue && <p class="entry__venue">{venue}</p>}
-    {summary && <p class="entry__summary">{summary}</p>}
-    {
-      links && links.length > 0 && (
-        <p class="entry__links">
-          {links.map((link) => (
-            <a class="entry__link" href={link.href}>{link.label}</a>
-          ))}
-        </p>
-      )
-    }
+<article class="paper">
+  {image && <a class="paper__figure" href={image.src} aria-label={`View full-size figure for ${title}`}>
+    <img src={image.thumb ?? image.src} alt={image.alt} width="528" height="300" loading="lazy" />
+  </a>}
+  <div class="paper__body">
+    <p class="kicker">{venue}</p>
+    <h3>{href ? <a href={href}>{title}</a> : title}</h3>
+    {authors && <p class="authors">{authors.map((author, index) => (
+      <>{index > 0 && ", "}{author === site.name ? <strong>{author}</strong> : author}</>
+    ))}</p>}
+    <p>{summary}</p>
+    {links && <div class="text-links">{links.map((link) => <a href={link.href}>{link.label}</a>)}</div>}
   </div>
 </article>
