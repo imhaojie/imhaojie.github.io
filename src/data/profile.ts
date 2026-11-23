@@ -1,26 +1,108 @@
-export const education = [
+export type EducationEntry = {
+  period: string;
+  degree: string;
+  institution: string;
+  institutionUrl?: string;
+};
+
+export const education: EducationEntry[] = [
   {
-    period: "Expected Sep 2027",
-    degree: "Ph.D. in Computer Science and Technology",
-    institution: "Shanghai Jiao Tong University",
-    institutionUrl: "https://www.sjtu.edu.cn/",
-    detail: "Joint training with the Shanghai Innovation Institute.",
+    period: "Expected 2027.09",
+    degree: "Incoming Jointly Trained Ph.D. Student",
+    institution: "Shanghai Innovation Institute",
+    institutionUrl: "https://www.sii.edu.cn/",
   },
   {
-    period: "Sep 2023 – Jun 2027 (expected)",
-    degree: "B.Eng. in Software Engineering",
+    period: "Expected 2027.09",
+    degree: "Incoming Ph.D. Student",
+    institution: "Shanghai Jiao Tong University",
+    institutionUrl: "https://www.sjtu.edu.cn/",
+  },
+  {
+    period: "2023.09 - 2027.06 (expected)",
+    degree: "B.Eng., Software Engineering",
     institution: "Tongji University",
     institutionUrl: "https://www.tongji.edu.cn/",
-    detail: "GPA 4.79/5.00 · Ranked 6 of 191.",
   },
 ];
 
-export const honors = [
-  { title: "National Scholarship", org: "Ministry of Education, China", year: "2025, 2026" },
-  { title: "Silver Award · Second Place", org: "NBA × AWS BroadcastCode, Zhuhai–Macau", year: "2026" },
-  { title: "Computer Science Youth Pioneer", org: "Tongji University", year: "2026" },
-  { title: "TusStar (Qidi) Scholarship", org: "Tongji University", year: "2026" },
-  { title: "Outstanding Student", org: "Tongji University", year: "2024, 2025" },
-  { title: "Social Activity Scholarship", org: "Tongji University", year: "2024, 2025" },
-  { title: "First-Class Outstanding Student Scholarship", org: "Tongji University", year: "2024" },
+/** Rendered inline in the About paragraph, in this order. */
+export const interests = [
+  "multimodal large language models",
+  "video understanding",
+  "video generation",
+  "world models",
+];
+
+export type Honor = {
+  /** Full award name. */
+  title: string;
+  /** Awarding body. */
+  org?: string;
+  /** Year, or comma-separated years. */
+  year?: string;
+  kind: "scholarship" | "honor";
+};
+
+export const honors: Honor[] = [
+  {
+    title: "Silver Award (2nd Place)",
+    org: "NBA × AWS BroadcastCode Hackathon, Zhuhai–Macau",
+    year: "2026",
+    kind: "honor",
+  },
+  {
+    title: "National Scholarship",
+    org: "Ministry of Education of the People's Republic of China",
+    year: "2026",
+    kind: "scholarship",
+  },
+  {
+    title: "National Scholarship",
+    org: "Ministry of Education of the People's Republic of China",
+    year: "2025",
+    kind: "scholarship",
+  },
+  {
+    title: "Qidi Scholarship",
+    org: "Tongji University",
+    year: "2026",
+    kind: "scholarship",
+  },
+  {
+    title: "First-Class Outstanding Student Scholarship",
+    org: "Tongji University",
+    year: "2024",
+    kind: "scholarship",
+  },
+  {
+    title: "Social Activity Scholarship",
+    org: "Tongji University",
+    year: "2025",
+    kind: "scholarship",
+  },
+  {
+    title: "Social Activity Scholarship",
+    org: "Tongji University",
+    year: "2024",
+    kind: "scholarship",
+  },
+  {
+    title: "Outstanding Student",
+    org: "Tongji University",
+    year: "2025",
+    kind: "honor",
+  },
+  {
+    title: "Outstanding Student",
+    org: "Tongji University",
+    year: "2024",
+    kind: "honor",
+  },
+  {
+    title: "Computer Science Youth Pioneer",
+    org: "School of Computer Science and Technology, Tongji University",
+    year: "2026",
+    kind: "honor",
+  },
 ];

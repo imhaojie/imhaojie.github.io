@@ -20,9 +20,9 @@ export const projects: Project[] = [
   {
     title: "GameBuddy: AI Basketball Companion",
     subtitle: "Evidence-backed basketball stories from video and game data",
-    role: "NBA × AWS BroadcastCode, Zhuhai–Macau",
+    role: "NBA × AWS BroadcastCode 2026 Hackathon, Zhuhai–Macau",
     period: "2026",
-    status: "Silver Award",
+    status: "Silver Award (2nd place)",
     summary:
       "Turns basketball video and official game data into evidence-backed play breakdowns with AI commentary and an enhanced replay.",
     tags: ["Multimodal AI", "AWS", "Video"],
@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "Uses AI agents to turn a play into a verified narrative and an enhanced video.",
       "Built with a basketball companion interface for replay and exploration.",
     ],
-    repo: "https://github.com/imhaojie/GameBuddy",
+    repo: "https://github.com/imhaojie/BroadcastCode-2026",
     image: {
       src: "/assets/gamebuddy-demo.jpg",
       thumb: "/assets/thumbs/gamebuddy-demo.jpg",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     subtitle: "Three-signal NBA draft prediction with auditable agents",
     role: "AWS Summit Shanghai Hackathon",
     period: "2026",
-    status: "Third place",
+    status: "Third place; advanced to the Macau round",
     summary:
       "An auditable NBA draft intelligence system that fuses talent, expert mock drafts, and market signals, then simulates 30 distinct GM decision styles over 1,500 Monte Carlo scenarios.",
     tags: ["Python", "AWS Serverless", "Multi-Agent Systems"],
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     subtitle: "Playful systems coursework in Cocos2d-x",
     role: "Course project",
     period: "2024",
-    status: "Cocos2d-x",
+    status: "Completed coursework",
     summary:
       "A game systems project covering interaction loops, collision detection, inventory design, map scenes, and farming simulation mechanics.",
     tags: ["C++", "Cocos2d-x", "Game Systems"],

@@ -1,9 +1,11 @@
 export const site = {
   name: "Haojie Hu",
   nameCn: "胡浩杰",
-  role: "Research Intern at Tencent Video",
+  role: "Incoming Ph.D. Student at Shanghai Jiao Tong University",
   location: "Shanghai, China",
-  description: "Haojie Hu (胡浩杰) studies video foundation models, audio-visual understanding, and world models. Research experience at Tencent Video, publications, and open-source projects.",
+  bio: "Incoming Ph.D. student at Shanghai Jiao Tong University, jointly trained at Shanghai Innovation Institute, focusing on multimodal large language models, video understanding and generation, and world models.",
+  description:
+    "Haojie Hu is an incoming Ph.D. student at Shanghai Jiao Tong University, jointly trained at Shanghai Innovation Institute, working on multimodal large language models, video understanding and generation, and world models.",
   url: "https://imhaojie.github.io",
   portrait: "/assets/avatar.jpg",
   affiliations: [

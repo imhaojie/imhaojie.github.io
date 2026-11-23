@@ -8,7 +8,6 @@ export type Publication = {
   /** Rendered in order; entries matching `site.name` are emphasised. */
   authors?: string[];
   venue: string;
-  summary: string;
   href?: string;
   links?: EntryLink[];
   image?: { src: string; alt: string; thumb?: string };
@@ -32,8 +31,8 @@ export const publicationGroups: PublicationGroup[] = [
           "Ying Shen",
           "Lin Zhang",
         ],
-        venue: "NeurIPS 2026 · Poster",
-        summary: "Can a model tell how much reasoning a clip needs before it starts? Our controller reads its initial hidden state and retains about 96% of long-chain performance using about 40% of the reasoning tokens.",
+        venue:
+          "Annual Conference on Neural Information Processing Systems (NeurIPS), 2026 · arXiv:2610.21613",
         href: "https://arxiv.org/abs/2610.21613",
         links: [
           {
@@ -71,8 +70,7 @@ export const publicationGroups: PublicationGroup[] = [
           "Conghui He",
           "Weijia Li",
         ],
-        venue: "Preprint · arXiv:2608.02218",
-        summary: "A team of agents plans, lays out, and repairs research posters. The exported PowerPoint keeps the text, figures, and layout editable.",
+        venue: "arXiv:2608.02218",
         href: "https://arxiv.org/abs/2608.02218",
         links: [
           { label: "Paper", href: "https://arxiv.org/abs/2608.02218" },
@@ -93,8 +91,7 @@ export const publicationGroups: PublicationGroup[] = [
       {
         title:
           "Listening to the Motion: Audio-Conditioned Kinematic Verification for Robust Audio-Visual Segmentation",
-        venue: "Under review",
-        summary: "We use synchrony between sound and motion to identify which object is making a sound, even when other objects in the scene are moving.",
+        venue: "Under review - code released",
         href: "https://github.com/imhaojie/SKA-VCT",
         links: [
           { label: "Code", href: "https://github.com/imhaojie/SKA-VCT" },
@@ -108,3 +105,5 @@ export const publicationGroups: PublicationGroup[] = [
     ],
   },
 ];
+
+export const publicationLegend = "* equal contribution, \u2020 corresponding author";
